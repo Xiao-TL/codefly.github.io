@@ -7,16 +7,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/article/%E4%BD%A0%E5%A5%BD/</loc>
-        <lastmod>2019-09-02T15:22:38.965Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/article/hexo-theme-huweihuang/</loc>
-        <lastmod>2019-09-02T14:41:50.832Z</lastmod>
+        <loc>http://yoursite-url/article/%E8%BF%99%E6%98%AF%E6%88%91/</loc>
+        <lastmod>2019-09-05T15:05:36.867Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
