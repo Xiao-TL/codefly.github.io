@@ -212,35 +212,169 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>@<a href="%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%88%91%E6%95%B4%E7%90%86%E7%9A%84%E6%9C%89%E5%85%B3Linux%E5%B8%B8%E8%A7%81%E7%9A%84%E5%91%BD%E4%BB%A4">TOC</a></p>
-<h1 id="1linux相关知识">1.Linux相关知识</h1>
-<p><img src="https://img-blog.csdnimg.cn/20190906210011666.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzk4MzQz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="2linux基本操作">2.Linux基本操作</h1>
-<h2 id="21常见命令及作用总述">2.1常见命令及作用总述</h2>
-<h1 id="3linux服务器远程管理常见命令">3.Linux服务器远程管理常见命令</h1>
-<h2 id="31关机重启">3.1关机/重启</h2>
-<h2 id="32查看配置网卡信息">3.2查看配置网卡信息</h2>
-<h2 id="33远程登录和复制文件">3.3远程登录和复制文件</h2>
-<h1 id="4用户权限相关命令">4.用户权限相关命令</h1>
-<h2 id="41用户和权限的基本概念">4.1用户和权限的基本概念</h2>
-<h2 id="42组管理">4.2组管理</h2>
-<h2 id="43用户管理">4.3用户管理</h2>
-<h2 id="44修改文件权限">4.4修改文件权限</h2>
-<h1 id="5系统信息相关命令">5.系统信息相关命令</h1>
-<h2 id="51日期">5.1日期</h2>
-<h2 id="52磁盘信息">5.2磁盘信息</h2>
-<h2 id="53进程信息">5.3进程信息</h2>
-<h1 id="6其他命令">6.其他命令</h1>
-<h2 id="61查找文件">6.1查找文件</h2>
-<h2 id="62软链接和硬链接">6.2软链接和硬链接</h2>
-<h2 id="63打包压缩">6.3打包压缩</h2>
+                <p>@<a href="%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%88%91%E6%95%B4%E7%90%86%E7%9A%84%E6%9C%89%E5%85%B3Linux%E5%B8%B8%E8%A7%81%E7%9A%84%E5%91%BD%E4%BB%A4">TOC</a><br>
+@<a href="%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%88%91%E6%95%B4%E7%90%86%E7%9A%84%E6%9C%89%E5%85%B3Linux%E5%B8%B8%E8%A7%81%E7%9A%84%E5%91%BD%E4%BB%A4">TOC</a></p>
+<h1 id="1-linux相关知识">1. Linux相关知识</h1>
+<h2 id="11-单用户操作系统和多用户操作系统">1.1 单用户操作系统和多用户操作系统</h2>
+<ul>
+<li>
+<p><strong>单用户操作系统</strong>：指一台计算机在同一时间 <strong>只能由一个用户</strong> 使用，一个用户独自享用系统的全部硬件和软件资源</p>
+<ul>
+<li><strong>Windows XP</strong> 之前的版本都是单用户操作系统</li>
+</ul>
+</li>
+<li>
+<p><strong>多用户操作系统</strong>：指一台计算机在同一时间可以由 <strong>多个用户</strong> 使用，多个用户共同享用系统的全部硬件和软件资源</p>
+<ul>
+<li><strong>Unix</strong> 和 <strong>Linux</strong> 的设计初衷就是多用户操作系统</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-windows-和-linux-文件系统区别">1.2  Windows 和 Linux 文件系统区别</h2>
+<h3 id="121-windows下的文件系统">1.2.1 <code>Windows</code>下的文件系统</h3>
+<ul>
+<li>在 <code>Windows</code> 下，打开 “计算机”，我们看到的是一个个的驱动器盘符：<br>
+<img src="https://img-blog.csdnimg.cn/20190906224954443.png" alt="Windows驱动器盘符"></li>
+<li>每个驱动器都有自己的根目录结构，这样形成了多个树并列的情形，如图所示：<br>
+<img src="https://img-blog.csdnimg.cn/20190906225049313.png" alt="Windows下的目录结构"></li>
+</ul>
+<h3 id="122-linux-下的文件系统">1.2.2 <code>Linux</code> 下的文件系统</h3>
+<ul>
+<li>在 <code>Linux</code> 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）：<br>
+<img src="https://img-blog.csdnimg.cn/20190906225259178.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzk4MzQz,size_16,color_FFFFFF,t_70" alt="Linux下的文件目录"></li>
+<li><code>Ubuntu</code> 没有盘符这个概念，只有一个根目录 <code>/</code>，所有文件都在它下面：<br>
+<img src="https://img-blog.csdnimg.cn/20190906225405399.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzk4MzQz,size_16,color_FFFFFF,t_70" alt="Linux根目录"></li>
+</ul>
+<h3 id="123-用户目录">1.2.3 用户目录</h3>
+<p>位于 <code>/home/user</code>，称之为用户工作目录或家目录，表示方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user</span><br></pre></td></tr></table></figure>
+<h3 id="124-linux-主要目录速查表">1.2.4 <code>Linux</code> 主要目录速查表</h3>
+<ul>
+<li>/：根目录，<strong>一般根目录下只存放目录</strong>，在 linux 下有且只有一个根目录，所有的东西都是从这里开始，当在终端里输入 <code>/home</code>，其实是在告诉电脑，先从 <code>/</code>（根目录）开始，再进入到 <code>home</code> 目录中</li>
+<li>/bin、/usr/bin：可执行二进制文件的目录，如常用的命令 ls、tar、mv、cat 等</li>
+<li>/boot：放置 linux 系统启动时用到的一些文件，如 linux 的内核文件：<code>/boot/vmlinuz</code>，系统引导管理器：<code>/boot/grub</code></li>
+<li>/dev：存放linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱<code>mount /dev/cdrom /mnt</code></li>
+<li>/etc：系统配置文件存放的目录，不建议在此目录下存放可执行文件，重要的配置文件有
+<ul>
+<li>/etc/inittab</li>
+<li>/etc/fstab</li>
+<li>/etc/init.d</li>
+<li>/etc/X11</li>
+<li>/etc/sysconfig</li>
+<li>/etc/xinetd.d</li>
+</ul>
+</li>
+<li>/home：系统默认的用户家目录，新增用户账号时，用户的家目录都存放在此目录下
+<ul>
+<li><code>~</code> 表示当前用户的家目录</li>
+<li><code>~edu</code> 表示用户 <code>edu</code> 的家目录</li>
+</ul>
+</li>
+<li>/lib、/usr/lib、/usr/local/lib：系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助</li>
+<li>/lost+fount：系统异常产生错误时，会将一些遗失的片段放置于此目录下</li>
+<li>/mnt: /media：光盘默认挂载点，通常光盘挂载于 /mnt/cdrom 下，也不一定，可以选择任意位置进行挂载</li>
+<li>/opt：给主机额外安装软件所摆放的目录</li>
+<li>/proc：此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的文件有：/proc/cpuinfo、/proc/interrupts、/proc/dma、/proc/ioports、/proc/net/* 等</li>
+<li>/root：系统管理员root的家目录</li>
+<li>/sbin、/usr/sbin、/usr/local/sbin：放置系统管理员使用的可执行命令，如 fdisk、shutdown、mount 等。与 /bin 不同的是，这几个目录是给系统管理员 root 使用的命令，一般用户只能&quot;查看&quot;而不能设置和使用</li>
+<li>/tmp：一般用户或正在执行的程序临时存放文件的目录，任何人都可以访问，重要数据不可放置在此目录下</li>
+<li>/srv：服务启动之后需要访问的数据目录，如 www 服务需要访问的网页数据存放在 /srv/www 内</li>
+<li>/usr：应用程序存放目录
+<ul>
+<li>/usr/bin：存放应用程序</li>
+<li>/usr/share：存放共享数据</li>
+<li>/usr/lib：存放不能直接运行的，却是许多程序运行所必需的一些函数库文件</li>
+<li>/usr/local：存放软件升级包</li>
+<li>/usr/share/doc：系统说明文件存放目录</li>
+<li>/usr/share/man：程序说明文件存放目录</li>
+</ul>
+</li>
+<li>/var：放置系统执行过程中经常变化的文件
+<ul>
+<li>/var/log：随时更改的日志文件</li>
+<li>/var/spool/mail：邮件存放的目录</li>
+<li>/var/run：程序或服务启动后，其 PID 存放在该目录下</li>
+</ul>
+</li>
+</ul>
+<h2 id="13-linux的终端实用技巧">1.3 Linux的终端实用技巧</h2>
+<h3 id="131-终端字体调节">1.3.1 终端字体调节</h3>
+<ul>
+<li>代码如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl + <span class="built_in">shift</span> + =      放大 终端窗口的字体显示</span><br><span class="line">ctrl + -              缩小 终端窗口的字体显示</span><br></pre></td></tr></table></figure>
+<h3 id="132-输入自动补全">1.3.2 输入自动补全</h3>
+<ul>
+<li>在敲出 <code>文件</code>／<code>目录</code>／<code>命令</code> 的前几个字母之后，按下 <code>tab</code> 键
+<ul>
+<li>如果输入的没有歧义，系统会自动补全</li>
+<li>如果还存在其他 <code>文件</code>／<code>目录</code>／<code>命令</code>，再按一下 <code>tab</code> 键，系统会提示可能存在的命令</li>
+</ul>
+</li>
+</ul>
+<h3 id="133-输入命令技巧">1.3.3 输入命令技巧</h3>
+<ul>
+<li>按 <code>上</code>／<code>下</code> 光标键可以在曾经使用过的命令之间来回切换</li>
+<li>如果想要退出选择，并且不想执行当前选中的命令，可以按 <code>ctrl + c</code></li>
+</ul>
+<h3 id="134-通配符的使用">1.3.4 通配符的使用</h3>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>代表任意个数个字符</td>
+</tr>
+<tr>
+<td>?</td>
+<td>代表任意一个字符，至少 1 个</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>表示可以匹配字符组中的任一一个</td>
+</tr>
+<tr>
+<td>[abc]</td>
+<td>匹配 a、b、c 中的任意一个</td>
+</tr>
+<tr>
+<td>[a-f]</td>
+<td>匹配从 a 到 f 范围内的的任意一个字符</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>例如：当前文件有 <code>1773.txt</code> 和 <code>1894.txt</code> 两个文件，时间长了，忘了文件名，只记得第一位和最后一位，则可以输入<code>1*4.txt</code> 就可以找到你想要的的 <code>1894.txt</code> 文件了</li>
+</ul>
+<h1 id="2-linux基本操作">2. Linux基本操作</h1>
+<h2 id="21-常见命令及作用总述">2.1 常见命令及作用总述</h2>
+<h1 id="3-linux服务器远程管理常见命令">3. Linux服务器远程管理常见命令</h1>
+<h2 id="31-关机重启">3.1 关机/重启</h2>
+<h2 id="32-查看配置网卡信息">3.2 查看配置网卡信息</h2>
+<h2 id="33-远程登录和复制文件">3.3 远程登录和复制文件</h2>
+<h1 id="4-用户权限相关命令">4. 用户权限相关命令</h1>
+<h2 id="41-用户和权限的基本概念">4.1 用户和权限的基本概念</h2>
+<h2 id="42-组管理">4.2 组管理</h2>
+<h2 id="43-用户管理">4.3 用户管理</h2>
+<h2 id="44-修改文件权限">4.4 修改文件权限</h2>
+<h1 id="5-系统信息相关命令">5. 系统信息相关命令</h1>
+<h2 id="51-日期">5.1 日期</h2>
+<h2 id="52-磁盘信息">5.2 磁盘信息</h2>
+<h2 id="53-进程信息">5.3 进程信息</h2>
+<h1 id="6-其他命令">6. 其他命令</h1>
+<h2 id="61-查找文件">6.1 查找文件</h2>
+<h2 id="62-软链接和硬链接">6.2 软链接和硬链接</h2>
+<h2 id="63-打包压缩">6.3 打包压缩</h2>
 <h2 id="64-软件安装">6.4 软件安装</h2>
 <hr>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Place this tag where you want the button to render. -->
-<p>Please <a class="github-button" href="https://github.com/YenYuHsuan/hexo-theme-beantech" data-icon="octicon-star" aria-label="Star YenYuHsuan/hexo-theme-beantech on GitHub" target="_blank" rel="noopener">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/YenYuHsuan" aria-label="Follow @YenYuHsuan on GitHub" target="_blank" rel="noopener">Follow</a> would also be appreciated!<br>
-Peace!</p>
 
                 
 
@@ -296,7 +430,7 @@ Peace!</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1linux相关知识"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1.Linux&#x76F8;&#x5173;&#x77E5;&#x8BC6;</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#2linux基本操作"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2.Linux&#x57FA;&#x672C;&#x64CD;&#x4F5C;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#21常见命令及作用总述"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">2.1&#x5E38;&#x89C1;&#x547D;&#x4EE4;&#x53CA;&#x4F5C;&#x7528;&#x603B;&#x8FF0;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#3linux服务器远程管理常见命令"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3.Linux&#x670D;&#x52A1;&#x5668;&#x8FDC;&#x7A0B;&#x7BA1;&#x7406;&#x5E38;&#x89C1;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#31关机重启"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">3.1&#x5173;&#x673A;/&#x91CD;&#x542F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#32查看配置网卡信息"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">3.2&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x7F51;&#x5361;&#x4FE1;&#x606F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#33远程登录和复制文件"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3.3&#x8FDC;&#x7A0B;&#x767B;&#x5F55;&#x548C;&#x590D;&#x5236;&#x6587;&#x4EF6;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#4用户权限相关命令"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4.&#x7528;&#x6237;&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#41用户和权限的基本概念"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">4.1&#x7528;&#x6237;&#x548C;&#x6743;&#x9650;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#42组管理"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">4.2&#x7EC4;&#x7BA1;&#x7406;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#43用户管理"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">4.3&#x7528;&#x6237;&#x7BA1;&#x7406;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#44修改文件权限"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">4.4&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x6743;&#x9650;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#5系统信息相关命令"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">5.&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x76F8;&#x5173;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#51日期"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">5.1&#x65E5;&#x671F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#52磁盘信息"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">5.2&#x78C1;&#x76D8;&#x4FE1;&#x606F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#53进程信息"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">5.3&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#6其他命令"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">6.&#x5176;&#x4ED6;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#61查找文件"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">6.1&#x67E5;&#x627E;&#x6587;&#x4EF6;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#62软链接和硬链接"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">6.2&#x8F6F;&#x94FE;&#x63A5;&#x548C;&#x786C;&#x94FE;&#x63A5;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#63打包压缩"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">6.3&#x6253;&#x5305;&#x538B;&#x7F29;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#64-软件安装"><span class="toc-nav-number">6.4.</span> <span class="toc-nav-text">6.4 &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1-linux相关知识"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. Linux&#x76F8;&#x5173;&#x77E5;&#x8BC6;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#11-单用户操作系统和多用户操作系统"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.1 &#x5355;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x591A;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#12-windows-和-linux-文件系统区别"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">1.2  Windows &#x548C; Linux &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x533A;&#x522B;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#121-windows下的文件系统"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1.2.1 <code>Windows</code>&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#122-linux-下的文件系统"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">1.2.2 <code>Linux</code> &#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#123-用户目录"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">1.2.3 &#x7528;&#x6237;&#x76EE;&#x5F55;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#124-linux-主要目录速查表"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">1.2.4 <code>Linux</code> &#x4E3B;&#x8981;&#x76EE;&#x5F55;&#x901F;&#x67E5;&#x8868;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#13-linux的终端实用技巧"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">1.3 Linux&#x7684;&#x7EC8;&#x7AEF;&#x5B9E;&#x7528;&#x6280;&#x5DE7;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#131-终端字体调节"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">1.3.1 &#x7EC8;&#x7AEF;&#x5B57;&#x4F53;&#x8C03;&#x8282;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#132-输入自动补全"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">1.3.2 &#x8F93;&#x5165;&#x81EA;&#x52A8;&#x8865;&#x5168;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#133-输入命令技巧"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">1.3.3 &#x8F93;&#x5165;&#x547D;&#x4EE4;&#x6280;&#x5DE7;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#134-通配符的使用"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">1.3.4 &#x901A;&#x914D;&#x7B26;&#x7684;&#x4F7F;&#x7528;</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#2-linux基本操作"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. Linux&#x57FA;&#x672C;&#x64CD;&#x4F5C;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#21-常见命令及作用总述"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">2.1 &#x5E38;&#x89C1;&#x547D;&#x4EE4;&#x53CA;&#x4F5C;&#x7528;&#x603B;&#x8FF0;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#3-linux服务器远程管理常见命令"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. Linux&#x670D;&#x52A1;&#x5668;&#x8FDC;&#x7A0B;&#x7BA1;&#x7406;&#x5E38;&#x89C1;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#31-关机重启"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">3.1 &#x5173;&#x673A;/&#x91CD;&#x542F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#32-查看配置网卡信息"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">3.2 &#x67E5;&#x770B;&#x914D;&#x7F6E;&#x7F51;&#x5361;&#x4FE1;&#x606F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#33-远程登录和复制文件"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3.3 &#x8FDC;&#x7A0B;&#x767B;&#x5F55;&#x548C;&#x590D;&#x5236;&#x6587;&#x4EF6;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#4-用户权限相关命令"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4. &#x7528;&#x6237;&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#41-用户和权限的基本概念"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">4.1 &#x7528;&#x6237;&#x548C;&#x6743;&#x9650;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#42-组管理"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">4.2 &#x7EC4;&#x7BA1;&#x7406;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#43-用户管理"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">4.3 &#x7528;&#x6237;&#x7BA1;&#x7406;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#44-修改文件权限"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">4.4 &#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x6743;&#x9650;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#5-系统信息相关命令"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">5. &#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x76F8;&#x5173;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#51-日期"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">5.1 &#x65E5;&#x671F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#52-磁盘信息"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">5.2 &#x78C1;&#x76D8;&#x4FE1;&#x606F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#53-进程信息"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">5.3 &#x8FDB;&#x7A0B;&#x4FE1;&#x606F;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#6-其他命令"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">6. &#x5176;&#x4ED6;&#x547D;&#x4EE4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#61-查找文件"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">6.1 &#x67E5;&#x627E;&#x6587;&#x4EF6;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#62-软链接和硬链接"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">6.2 &#x8F6F;&#x94FE;&#x63A5;&#x548C;&#x786C;&#x94FE;&#x63A5;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#63-打包压缩"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">6.3 &#x6253;&#x5305;&#x538B;&#x7F29;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#64-软件安装"><span class="toc-nav-number">6.4.</span> <span class="toc-nav-text">6.4 &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;</span></a></li></ol></li></ol>
         
         </div>
       </aside>
