@@ -21,7 +21,7 @@
     </url>
     
     <url>
-        <loc>http://yoursite-url/archive/</loc>
+        <loc>http://yoursite-url/tags/archive/</loc>
         <lastmod>2019-09-06T13:48:36.343Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
